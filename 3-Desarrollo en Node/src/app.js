@@ -4,13 +4,13 @@
 // const { getUserById } =require('./js-fundation/03-callback');
 // const { getUserById } =require('./js-fundation/04-arrows.js');
 
-const getPokemonById = require('./js-fundation/06-promises');
+const getPokemonById = require("./js-fundation/06-promises");
 
-console.log(getPokemonById(10, (pokemon)=>{
-    console.log({ pokemon })
-}));
-
-
+getPokemonById(99)
+  .then((pokemon) => console.log({ pokemon }))
+  .catch((err) => console.log( 'Por favor intente de nuevo'))
+  .finally( ()=> console.log('Finalmente'))
+  ;
 
 // Referencia a callback + Arrow function
 // const id = 2
@@ -21,7 +21,6 @@ console.log(getPokemonById(10, (pokemon)=>{
 //     }
 //     console.log({user})
 // })
-
 
 //Referencia a la funcion factory y uso
 
