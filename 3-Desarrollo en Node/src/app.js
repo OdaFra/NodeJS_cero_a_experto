@@ -4,16 +4,15 @@
 // const { getUserById } =require('./js-fundation/03-callback');
 // const { getUserById } =require('./js-fundation/04-arrows.js');
 
- const { getAge, getUuid } = require("./plugins");
-const { buildMakePerson } = require('./js-fundation/05-factory')
+const getPokemonById = require('./js-fundation/06-promises');
 
-const makePerson = buildMakePerson({ getUuid, getAge })
+console.log(getPokemonById(10, (pokemon)=>{
+    console.log({ pokemon })
+}));
 
-const obj = ({ name: 'Oscar', birthdate:'1991-01-09' })
 
-const oscar = makePerson(obj)
-console.log({ oscar })
 
+// Referencia a callback + Arrow function
 // const id = 2
 
 // getUserById(id, (error, user)=>{
@@ -23,3 +22,15 @@ console.log({ oscar })
 //     console.log({user})
 // })
 
+
+//Referencia a la funcion factory y uso
+
+// const { getAge, getUuid } = require("./plugins");
+// const { buildMakePerson } = require('./js-fundation/05-factory')
+
+// const makePerson = buildMakePerson({ getUuid, getAge })
+
+// const obj = ({ name: 'Oscar', birthdate:'1991-01-09' })
+
+// const oscar = makePerson(obj)
+// console.log({ oscar })
