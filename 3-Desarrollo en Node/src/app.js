@@ -3,14 +3,19 @@
 // console.log(emailTemplate)
 // const { getUserById } =require('./js-fundation/03-callback');
 // const { getUserById } =require('./js-fundation/04-arrows.js');
+//const getPokemonById = require("./js-fundation/06-promises");
 
-const getPokemonById = require("./js-fundation/06-promises");
+const { buildLogger } = require('./plugins')
 
-getPokemonById(9)
-  .then((pokemon) => console.log({ pokemon }))
-  .catch((err) => console.log( 'Por favor intente de nuevo'))
-  .finally( ()=> console.log('Finalmente'))
-  ;
+const logger = buildLogger('app.js');
+
+logger.log('Hola mundo')
+
+// getPokemonById(9)
+//   .then((pokemon) => console.log({ pokemon }))
+//   .catch((err) => console.log( 'Por favor intente de nuevo'))
+//   .finally( ()=> console.log('Finalmente'))
+//   ;
 
 // Referencia a callback + Arrow function
 // const id = 2
