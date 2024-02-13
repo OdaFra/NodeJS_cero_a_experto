@@ -9,7 +9,8 @@ const { buildLogger } = require('./plugins')
 
 const logger = buildLogger('app.js');
 
-logger.log('Hola mundo')
+logger.log('Ejecución desde...')
+logger.error('Error en...')
 
 // getPokemonById(9)
 //   .then((pokemon) => console.log({ pokemon }))
