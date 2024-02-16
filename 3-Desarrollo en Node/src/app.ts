@@ -1,3 +1,4 @@
+import { buildLogger } from "./plugins/logger.plugins";
 // const { emailTemplate } = require('./js-fundation/01-template')
 // require('./js-fundation/02-destructuring');
 // console.log(emailTemplate)
@@ -5,9 +6,10 @@
 // const { getUserById } =require('./js-fundation/04-arrows.js');
 //const getPokemonById = require("./js-fundation/06-promises");
 
-const { buildLogger } = require('./plugins')
 
-const logger = buildLogger('app.js');
+// const { buildLogger } = require('./plugins')
+
+const logger = buildLogger('app.ts');
 
 logger.log('Ejecución desde...')
 logger.error('Error en...')
@@ -39,3 +41,7 @@ logger.error('Error en...')
 
 // const oscar = makePerson(obj)
 // console.log({ oscar })
+
+// export const name: string = 'Oscar'
+
+// console.log(`Hola ${name}`)
