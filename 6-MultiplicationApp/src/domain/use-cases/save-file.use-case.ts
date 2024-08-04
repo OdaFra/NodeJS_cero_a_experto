@@ -8,7 +8,7 @@ export interface Options {
     fileContent: string;
     fileDestination?: string;
     fileName?: string;
-    // base: number;
+    base: number;
 
 }
 
@@ -21,7 +21,7 @@ export class SaveFile implements SaveFileUseCase {
         fileContent,
         fileDestination = 'outputs',
         fileName='table',
-       // base,
+       base,
 
     }: Options): boolean {
         try {
@@ -30,9 +30,9 @@ export class SaveFile implements SaveFileUseCase {
 
             // grabar en un archivo en la carpeta creada.
 
-            
+            let name = (fileName ==='multiplication-table') ? `${fileName}-${base}`:`${fileName}`
 
-            fs.writeFileSync(`${fileDestination}/${fileName}.txt`,
+            fs.writeFileSync(`${fileDestination}/${name}.txt`,
                 fileContent)
             console.log('File created!')
             return true;

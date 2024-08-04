@@ -20,7 +20,7 @@ export class ServerApp {
 
         const wasCreated = new SaveFile().execute({ fileContent: table,
             fileDestination:fileDestination, fileName:fileName, //fileDestination: `./outputs/`, 
-            //base:base
+            base:base
 
          })
 
