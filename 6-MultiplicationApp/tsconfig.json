@@ -1,7 +1,8 @@
 {
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts", "dist"],
+  "include": ["src/**/*",".spec.ts", ".test.ts"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
+    
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     /* Projects */
@@ -106,6 +107,8 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,
+    "types": ["jest", "node"],                     /* Specify type package names to be included without being referenced in a source file. */
+                                /* Skip type checking all .d.ts files. */
   }
 }

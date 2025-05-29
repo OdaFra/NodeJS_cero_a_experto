@@ -1,44 +1,45 @@
-import fs from 'fs'
-//Creamos la interfae a utilizar para guardar el archivo
-export interface SaveFileUseCase {
-    execute: (options: Options) => boolean;
-}
+    import fs from 'fs';
 
-export interface Options {
-    fileContent: string;
-    fileDestination?: string;
-    fileName?: string;
-    base: number;
+    //Creamos la interfae a utilizar para guardar el archivo
+    export interface SaveFileUseCase {
+        execute: (options: Options) => boolean;
+    }
 
-}
+    export interface Options {
+        fileContent: string;
+        fileDestination?: string;
+        fileName?: string;
+        base?: number;
 
-export class SaveFile implements SaveFileUseCase {
-    constructor(
-        /**repository StorageRepository */
-    ) { }
+    }
 
-    execute({
-        fileContent,
-        fileDestination = 'outputs',
-        fileName='table',
-       base,
+    export class SaveFile implements SaveFileUseCase {
+        constructor(
+            /**repository StorageRepository */
+        ) { }
 
-    }: Options): boolean {
-        try {
-            //Crear un directorio en raiz
-            fs.mkdirSync(fileDestination, { recursive: true });
+        execute({
+            fileContent,
+            fileDestination = 'outputs',
+            fileName='table',
+        base,
 
-            // grabar en un archivo en la carpeta creada.
+        }: Options): boolean {  
+            try {
+                //Crear un directorio en raiz
+                fs.mkdirSync(fileDestination, { recursive: true });
 
-            let name = (fileName ==='multiplication-table') ? `${fileName}-${base}`:`${fileName}`
+                // grabar en un archivo en la carpeta creada.
 
-            fs.writeFileSync(`${fileDestination}/${name}.txt`,
-                fileContent)
-            console.log('File created!')
-            return true;
-        } catch (error) {
-            console.log(error)
-            return false;
-        }
-    };
-}
+                let name = (fileName ==='multiplication-table') ? `${fileName}-${base}`:`${fileName}`
+
+                fs.writeFileSync(`${fileDestination}/${name}.txt`,
+                    fileContent)
+                console.log('File created!')
+                return true;
+            } catch (error) {
+                console.log(error)
+                return false;
+            }
+        };
+    }
