@@ -13,7 +13,7 @@ interface RunOptions {
 
 export class ServerApp {
     static run({ base, limit, showTable, fileDestination, fileName }: RunOptions) {
-        console.log('Server running....');
+        console.log('Server running...');
 
         //Creamos la instancia por lo que es agregado como injeccion de dependencias!
         const table = new CreateTable().execute({ base, limit });
@@ -25,6 +25,6 @@ export class ServerApp {
          })
 
         if (showTable) console.log(table);
-        (wasCreated) ? console.log('file created') : console.error('file not created!')
+        (wasCreated) ? console.log('File created!') : console.error('File not created!')
     }
 }
